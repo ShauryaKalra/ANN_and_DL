@@ -1,69 +1,42 @@
-# ANN and Deep Learning — Assignments
+# ANN and Deep Learning
 
-Assignments for the ANN & Deep Learning course. Each folder contains a standalone implementation.
+Course assignments for ANN & Deep Learning — BSc Data Science & AI, Christ University Delhi NCR.
+
+All implementations are from scratch or near-scratch. Libraries used: NumPy, PyTorch, Keras.
 
 ---
 
-## AB#3 — Feedforward Neural Network (PyTorch)
+## labs
 
-**Folder:** `ab3_feedforward_nn/`
+| lab | topic | notebook |
+|-----|-------|---------|
+| Lab 1 | Perceptron simulation using NumPy — tested on AND, OR, NAND, XOR gates | `labs/Lab_1.ipynb` |
+| Lab 2 | Single neuron from scratch with gradient descent | `labs/lab_2.ipynb` |
+| Lab 3 | Feedforward neural network in PyTorch | `labs/Lab_3.ipynb` |
+| Lab 4 | Multi-layer perceptron in Keras for multiclass classification | `labs/Lab_4.ipynb` |
+| Lab 5 | CNN in Keras for binary image classification | `labs/Lab_5.ipynb` |
 
-### What it does
-Builds a simple feedforward neural network from scratch using PyTorch to classify Iris flowers into 3 categories (Setosa, Versicolor, Virginica).
+each lab has a matching README (`Lab_N_README.md`) explaining the concept and code line by line.
 
-### Network Architecture
-```
-Input (4 features)
-    ↓
-Hidden Layer 1 — 16 neurons + ReLU
-    ↓
-Hidden Layer 2 — 8 neurons + ReLU
-    ↓
-Output — 3 classes (flower types)
-```
+---
 
-### Key Concepts Used
-| Concept | What it means (simply) |
-|---|---|
-| **Feedforward** | Data flows in one direction only — input → hidden → output |
-| **ReLU** | Activation function that adds non-linearity (replaces negatives with 0) |
-| **CrossEntropyLoss** | Measures how wrong the predictions are for multi-class problems |
-| **Adam Optimizer** | Adjusts weights during training to reduce loss |
-| **Backpropagation** | How the network learns — errors flow backwards to fix weights |
+## assignments
 
-### How to Run
+| folder | topic |
+|--------|-------|
+| `ab3_feedforward_nn/` | Feedforward NN in PyTorch — Iris flower classification (96.7% accuracy) |
+| `CNN_Animals10_Classification/` | CNN for Animals-10 dataset classification |
 
-**1. Install dependencies**
+---
+
+## how to run
+
 ```bash
-pip install torch scikit-learn
-```
+# notebooks
+jupyter notebook labs/Lab_1.ipynb
 
-**2. Run the script**
-```bash
+# python scripts
 cd ab3_feedforward_nn
+pip install -r requirements.txt
 python feedforward_nn.py
 ```
-
-**3. Expected output**
-```
-Training...
-
-Epoch [ 10/100] | Train Loss: 0.8231 | Test Loss: 0.7654 | Test Accuracy: 73.3%
-Epoch [ 20/100] | Train Loss: 0.5412 | Test Loss: 0.5123 | Test Accuracy: 86.7%
-...
-Epoch [100/100] | Train Loss: 0.1023 | Test Loss: 0.0987 | Test Accuracy: 96.7%
-
-── Final Results ──
-Test Accuracy: 96.7%  (29/30 correct)
-```
-
-### File Structure
-```
-ab3_feedforward_nn/
-├── feedforward_nn.py   # Main script — network definition + training + evaluation
-└── requirements.txt    # Dependencies
-```
-
----
-
-*More assignments will be added here as the course progresses.*
